@@ -1,0 +1,172 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 Apr, 2018, 3:27:47 PM
+    Author     : user
+*/
+body{
+    padding: 10px;
+    overflow: hidden;
+    min-height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background: #559972; /* For browsers that do not support gradients */
+    background: linear-gradient(#559972,#C6D290,#BF5931); /* Standard syntax (must be last) */
+}
+#mainLogo{
+    width: 25%;
+
+}
+#container{
+    text-align: center;
+}
+.myImg{
+    border-radius: 10px;
+}
+.centerText{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: #E51F5F;
+    font-size: 50px;
+    margin: 5px;
+    letter-spacing: 10px;
+}
+.centerText:hover > .sep{
+    width:200px;
+}
+.sep{
+    margin: auto;
+    background-color: #E51F5F;
+    height: 2px;
+    width: 0px;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+}
+#page1{
+    padding: 10px;
+
+}
+#page2{
+    color: #FFFFFF;
+    text-align: center;
+    height: auto;
+    margin: 5px;
+
+}
+#page3{
+    width: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#aboutustext{
+    color: #FFFFFF;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#layer1{
+    padding-top: 50px;
+    font-size: 25px;
+    width: 100%;
+}
+#page4{
+    margin-bottom: 20px;
+}
+
+
+@media only screen and (min-width: 430px) {
+    #page3{
+        visibility: hidden;
+        height: 0%;
+        width:0%;
+    }
+
+}
+@media only screen and (max-width: 430px) {
+    #page4{
+        visibility: hidden;
+        height: 0%;
+        width:0%;
+    }
+    #mainLogo{
+        width: 65%;
+
+    }
+
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    /*padding-top: 100px;  Location of the box */
+    left: 0;
+    top: 0;
+    max-height: 100%;
+    width: 100%; /* Full width */
+    height: auto; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background: transparent;
+     -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #4BC399;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    
+}
+
+/* The Close Button */
+.close {
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#cardTitle{
+    align-content: center; color: whitesmoke;padding-left: 20px;padding-right: 20px; font-size:20px;
+}
+#buttonSignup{
+    border: none; background-color: #00A67C; width: 100%; height: auto; font-size: 20px; color: whitesmoke;
+}
+#input1{
+    font-size:15px;width:100%;padding: 5px; border-top: transparent; border-left: transparent; border-right: transparent ; border-bottom: transparent; box-shadow:none;background-color:#FFFFFF;border-radius: 10px;
+}
+#input2{
+    font-size:15px;width:100%;padding: 5px; border-top: transparent; border-left: transparent; border-right: transparent ; border-bottom: transparent; box-shadow:none;background-color:#FFFFFF;border-radius: 10px;
+}
+#input3{
+    font-size:15px;width:100%;padding: 5px; border-top: transparent; border-left: transparent; border-right: transparent ; border-bottom: transparent; box-shadow:none;background-color:#FFFFFF;border-radius: 10px;
+}
+@media only screen and (max-width: 425px) {
+    .modal-content {
+    width: 80%;
+    }
+}
+@media only screen and (max-width: 786px) {
+    .modal-content {
+    width: 90%;
+    }
+}
+@media only screen and (min-width: 787px) {
+    .modal-content {
+    width: 50%;
+    }
+}

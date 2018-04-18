@@ -1,0 +1,260 @@
+<html>
+
+<head>
+    <title>Gravo</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Quicksand" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/placeholderstyle.css" rel="stylesheet" type="text/css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<style>
+    #loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-top: 16px solid #FF3868;
+    border-right: 16px solid #FFDB49;
+    border-bottom: 16px solid #F4602E;
+    border-left: 16px solid #33C0C4;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+    }
+
+    .modal {
+        background-color: rgba(0,0,0,0.7);
+        margin: 0;
+        max-height:100%;
+    }
+
+    .modal-content{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: relative;
+        margin: 0;
+    }
+
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<body onload="stopAnimate()">
+    <div id="container">
+        <div id="page1" class="page1">
+            <div id="image" class="center">
+                <img id="mainLogo" src="img/gravo_logo.png" />
+            </div>
+            <div id="layer1" class="centerText">
+                <p id="aboutus">COMING SOON</p>
+                <div class="sep"></div>
+            </div>
+        </div>
+        <div id="page2" class="page2">
+            <p id='aboutustext'>Recycle with us, it's easy, fun, educational, convenient and rewarding!
+            <br>Interested to find out more about
+            <b>real recycling</b>?</p>
+        </div>
+        <div id="page3" class="page3 center w3-card" style="padding: 5px; border-radius: 10px; background-color: rgba(0,0,0,0.3);">
+            <div class="w3-content w3-display-container">
+                <img class="mySlides" src="img/Home.png" style="width:100%">
+                <img class="mySlides" src="img/Cart.png" style="width:100%">
+                <img class="mySlides" src="img/Calender.png" style="width:100%">
+                <img class="mySlides" src="img/Leaderboard.png" style="width:100%">
+
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {
+                slideIndex = 1
+                }
+                if (n < 1) {
+                slideIndex = x.length;
+                }
+                for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+                }
+                x[slideIndex - 1].style.display = "block";
+                }
+            </script>
+        </div>
+        <div id="page4" class="page4 center">
+            <img class="myImg" src="img/Home.png" style="width:15%">
+            <img class="myImg" src="img/Cart.png" style="width:15%">
+            <img class="myImg" src="img/Calender.png" style="width:15%">
+            <img class="myImg" src="img/Leaderboard.png" style="width:15%">
+        </div>
+        <div class="w3-card" style="display: inline-block;border-radius:5px;background-color: rgba(255,255,255,0.5);margin-bottom: 50px; padding: 10px;">
+            <button id="signup" style="background: transparent;border: none;outline: none;border-radius:10px; color: #E51F5F;margin-left: 10px;margin-right: 10px;text-decoration: none;font-size: 25px;">
+            <b style="font-size:30px;">SIGN UP NOW</b> and we will introduce you to recycling on demand</button>
+        </div>
+    </div>
+
+    <!-- Modal content -->
+    <div id="myModal" class="modal center">
+        <div class="modal-content w3-card">
+            <span class="close">&times;</span>
+            <p id="cardTitle">Registration</p>
+            <form id="userForm" name="getDetails" method="post" class="center-block">
+                <div>
+                    <input id="input1" class="inputClass" type="text" name="getName" required class="materialize-textarea grey-text-text" placeholder="Name eg(John Doe)">
+                </div>
+                <div>
+                    <input id="input2" type="email" name="getEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required class="materialize-textarea grey-text-text" placeholder="Email eg(someone@example.com)">
+                </div>
+                <div>
+                    <input id="input3" type="tel" name="getNumber" class="materialize-textarea grey-text-text" placeholder="Number eg(9753 3579)">
+                </div>
+                <div class="w3-card center " style=" background-color: #00A67C; margin-top: 20px; border-bottom-left-radius:10px;border-bottom-right-radius:10px; ">
+                    <button id="buttonSignup" type="submit" onclick="openLoadModal()">SUBMIT</button>
+                </div>
+
+            </form>
+            <div id="result">
+            </div>
+        </div>
+    </div>
+
+    <div id="loadModal" class="modal center">
+        <div id="loader"></div>
+    </div>
+
+    <script>
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("signup");
+
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+    function openLoadModal() {
+        document.getElementById('loadModal').style.display = "block";
+    }
+
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("signup");
+    $("#result").hide();
+    $("#userForm").submit(function (event) {
+        showAnimate();
+        var ajaxRequest;
+        event.preventDefault();
+        $("#result").html('');
+        var values = $(this).serialize();
+        console.log(values);
+        ajaxRequest = $.ajax({
+            url: "https://greenravolution.com/aboutus/doSubscribe.php",
+            type: "post",
+            data: values
+        });
+
+        ajaxRequest.done(function (response, textStatus, jqXHR) {
+            $("#loadModal").hide();
+            stopAnimate();
+            $("#result").show();
+            var resultResponse = response.split();
+            if(resultResponse[0]==="Duplicate"){
+                $("#result").html("You have already Registered! Do look out for more news of our App!");
+                console.log(response);
+                console.log(textStatus);
+                $("#userForm").hide();
+                $("#cardTitle").hide();
+            }else{
+                $("#result").html(response);
+                console.log(response);
+                $("#userForm").hide();
+                $("#cardTitle").hide();
+            }
+        });
+        ajaxRequest.fail(function () {
+            $("#result").html('There is error while submitting!');
+            console.log("submit Fail");
+        });
+    });
+    var myVar;
+    function stopAnimate() {
+        document.getElementById("loader").style.display = "none";
+    }
+    function showAnimate(){
+        document.getElementById("loader").style.display = "block";
+    }
+    </script>
+</body>
+</html>
